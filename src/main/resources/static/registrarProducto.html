@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Producto</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<thead>
+	<ul class="nav justify-content-center">
+	  <li class="nav-item">
+	    <a class="nav-link active" href="/inicio.html">Inicio</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="/registrarProducto.html">Productos</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Ventas</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Salir</a>
+	  </li>
+	</ul>
+</thead>
+<main class="row justify-content-center">
+		<div class="col-8 m-4" id="crear">
+			<p class="text-center">Registrar Producto</p>
+			<form id="formCrear">
+			  <div class="form-group">
+			    <label for="codigo">Codigo del Producto</label>
+			    <input type="number" class="form-control" id="codigo" >
+			  </div>
+			  <div class="form-group">
+			    <label for="nombre">Nombre del Producto</label>
+			    <input type="text" class="form-control" id="nombre">
+			  </div>
+			  <div class="form-group">
+			  	<label for="precio">Valor del Producto: </label>
+			    <input type="number" class="form-control" id="precio">
+			  </div>
+			  <button type="button" onclick="newProduct()" class="btn btn-primary">Crear</button>
+			</form>
+		</div>
+		<div class="col-12" id="actualizar" style="display:none;">
+			<div class="col-6">
+				<form>
+					<p class="text-center">Ingrese el codigo del producto a actualizar</p>
+					<div class="form-group">
+				  	<label for="idActBusc">Codigo del producto</label>
+				    <input type="number" class="form-control" id="idActBusc">
+				  </div>
+				  <button type="button"  class="btn btn-primary">Buscar</button>
+				</form>
+			</div>
+			
+			<form id="formActualizar">
+			  <div class="form-group">
+			    <label for="codigo">Codigo del Producto</label>
+			    <input type="number" class="form-control" id="codigoA" readonly>
+			  </div>
+			  <div class="form-group">
+			    <label for="nombre">Password</label>
+			    <input type="text" class="form-control" id="nombreA">
+			  </div>
+			  <div class="form-group">
+			  	<label for="precio">Valor del Producto: </label>
+			    <input type="number" class="form-control" id="precioA">
+			  </div>
+			  <button type="button" class="btn btn-primary">Actualizar</button>
+			</form>	
+		</div>
+		
+		<div id=eliminar class="col-12" style="display:none;">
+			<div class="col-6">
+				<form>
+					<p class="text-center">Ingrese el codigo del producto a eliminar</p>
+					<div class="form-group">
+				  	<label for="idProdDel">Codigo del producto</label>
+				    <input type="number" class="form-control" id="idProdDel">
+				  </div>
+				  <button type="button" class="btn btn-primary">Buscar</button>
+				</form>
+			</div>
+		</div>
+		
+			
+</main>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/inicio.js"></script>
+
+</html>

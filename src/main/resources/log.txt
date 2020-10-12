@@ -1,0 +1,11 @@
+Fecha: Sun Oct 11 20:02:07 CDT 2020 Usuario: 1 info : datos incorrectos en el logueoFecha: Sun Oct 11 20:08:12 CDT 2020 Usuario: 1 debug : Logueo ExitosoFecha: Sun Oct 11 20:08:12 CDT 2020 Usuario: 1 info : datos incorrectos en el logueo
+Fecha: Sun Oct 11 20:09:15 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Sun Oct 11 20:09:15 CDT 2020 Usuario: 1 info : datos incorrectos en el logueo
+Fecha: Sun Oct 11 20:13:02 CDT 2020 Usuario: 1 info : datos incorrectos en el logueo
+Fecha: Sun Oct 11 20:13:17 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Sun Oct 11 20:35:16 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Sun Oct 11 20:39:15 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Sun Oct 11 20:43:04 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Sun Oct 11 20:44:11 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Sun Oct 11 20:45:35 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Mon Oct 12 00:01:34 CDT 2020 Usuario: 1 debug : Logueo Exitoso
