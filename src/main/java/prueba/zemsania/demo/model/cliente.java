@@ -21,8 +21,6 @@ public class cliente {
 	private String email;
 	private String password;
 	
-	@OneToMany(targetEntity=venta.class)
-	private List ventaList;
 	
 	public cliente(){
 		
@@ -44,13 +42,6 @@ public class cliente {
 	}
 	public void setIdCliente(int idCliente) {
 		this.id_cliente = idCliente;
-	}
-	public List getVentaList() {
-		return ventaList;
-	}
-
-	public void setVentaList(List ventaList) {
-		this.ventaList = ventaList;
 	}
 
 	public String getNombre() {

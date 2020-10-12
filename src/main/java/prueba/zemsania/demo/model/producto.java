@@ -2,6 +2,7 @@ package prueba.zemsania.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,15 +12,15 @@ public class producto {
 	@Id
 	private int id_producto;
 	private String nombre;
-	private long precio;
+	private long precio;	
 	
 		
 	public producto(){
 		
 	}
 	
-	public producto(int idProducto, String nombre, Long precio) {
-		this.id_producto = idProducto;
+	public producto(int id_producto, String nombre, Long precio) {
+		this.id_producto = id_producto;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
@@ -27,8 +28,8 @@ public class producto {
 	public int getIdProducto() {
 		return id_producto;
 	}
-	public void setIdProducto(int idProducto) {
-		this.id_producto = idProducto;
+	public void setIdProducto(int id_producto) {
+		this.id_producto = id_producto;
 	}
 	public String getNombre() {
 		return nombre;

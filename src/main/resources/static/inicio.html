@@ -23,7 +23,9 @@
 	</ul>
 </thead>
 <main class="row justify-content-center">
-
+	<div class="col-2">
+		<button id="comprar" onclick="verfinalizarCompra()" type="button" class="btn btn-primary" style="display:none;">Finalizar Compra</button>
+	</div>
 	<div class="card col-10 m-4" style="width:80%">
   		<div class="card-body">
 	    	<h2 class="text-center card-title">Compra de Productos</h2>
@@ -31,6 +33,28 @@
 	    		
 	    	</div>
   		</div>
+	</div>
+	
+	<div id="modalComprar" class="modal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Finalizar Compra</h5>
+	        <button type="button" onclick="cerrarfinaliarComp()" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body" >
+	        <div id="productosComp" class="row">
+	    		
+	    	</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" onclick="comprar()" class="btn btn-primary">Comprar</button>
+	        <button type="button" onclick="cerrarfinaliarComp()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 </main>
 

@@ -2,8 +2,13 @@
  * 
  */
 var productos=[]
+var ultima;
 $(document).ready(function(){
 	getProductos();
+	
+	if(JSON.parse(sessionStorage.getItem("compras")).length > 0 ){
+		$("#comprar").show();
+	}
 })
 
 function getProductos(){
@@ -51,6 +56,8 @@ function addProducto(idproducto,nombre,precio){
 	if(verificador){
 		productos.push(producto)
 		alert("producto agregado")
+		sessionStorage.setItem("compras",JSON.stringify(productos))
+		location.reload()
 	}else{
 		
 		alert("ya agrego este producto")
@@ -59,10 +66,11 @@ function addProducto(idproducto,nombre,precio){
 
 function newProduct(){
 	var producto={
-			idProducto : $("#codigo").val(),
+			idProducto : $("#codigoPrin").val(),
 			nombre : $("#nombre").val(),
 			precio : $("#precio").val()
 	}
+	console.log(JSON.stringify(producto))
 	$.ajax({
 		url : "/product/saveProduct",
 		type: "POST",
@@ -70,7 +78,7 @@ function newProduct(){
 		contentType: "application/json",
 		success: function(){
 			alert("Producto Creado")
-			$("#codigo").val("")
+			$("#codigoPrin").val("")
 			$("#nombre").val("")
 			$("#precio").val("")
 		},
@@ -100,7 +108,7 @@ function verEliminar(){
 
 function updateProducto(){
 	var producto={
-			idProducto : $("#codigoA").val(),
+			idProducto : parseInt($("#codigoA").val()),
 			nombre : $("#nombreA").val(),
 			precio : $("#precioA").val()
 	}
@@ -148,4 +156,96 @@ function deleteProducto(){
             alert("Producto no existe"); 
         }
 	})
+}
+
+function verfinalizarCompra(){
+	var productComp = JSON.parse(sessionStorage.getItem("compras"));
+	$("#modalComprar").show();
+	$("#productosComp").empty();
+	for(i in productComp){
+		$("#productosComp").append(
+				'<div class="card col m-1 text-center" style="width: 15rem;">'+
+					'<div class="card-body">'+
+					'<h5 class="card-title">' + productComp[i].nombre +'</h5>'+
+					'<p class="card-text">Codigo:' + productComp[i].idProducto +'</p>'+
+					'<p class="card-text">Precio: $ ' + productComp[i].precio + '</p>'+
+					'</div>'+
+			  	'</div>'
+			)
+	}
+}
+
+function cerrarfinaliarComp(){
+	$("#modalComprar").hide();
+}
+
+function comprar(){
+	var fecha = new Date()
+	var jwt = parseJwt (sessionStorage.getItem("token"));
+	
+	var venta={
+			id_cliente : jwt.sub,
+			fecha : fecha
+	}
+	$.ajax({
+		url:"/venta/saveVenta",
+		type:"POST",
+		data: JSON.stringify(venta),
+		contentType: "application/json",
+		success: function(resp){
+			consultVentas(jwt.sub)						
+		},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("No se pudo realizar la compra"); 
+        }
+	})	
+}
+
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+};
+
+
+function consultVentas (idclient){
+	$.ajax({
+		url:"/venta/"+idclient,
+		type:"GET",
+		success: function(resp){
+			ultima = resp[resp.length-1];
+			saveDetalle();
+		},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("No se pudo realizar la venta"); 
+        }
+	})	
+}
+
+function saveDetalle(){
+	var productComp = JSON.parse(sessionStorage.getItem("compras"));
+	for (i in productComp){
+		var detalle={
+				id_producto: productComp[i].idProducto,
+				id_venta: ultima.id_venta
+		}
+		$.ajax({
+			url:"/detalle/saveDetalle",
+			data: JSON.stringify(detalle),
+			type:"POST",
+			contentType: "application/json",
+			success: function(){
+				console.log("agregando...")
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) { 
+	            alert("No se pudo realizar la compra"); 
+	        }
+		})
+	}
+	alert("¡Felicitaciones compra finalizada!")
+	sessionStorage.setItem("compras","[]")
+	location.reload()
 }

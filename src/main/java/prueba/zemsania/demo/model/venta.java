@@ -17,16 +17,26 @@ public class venta {
 	@GeneratedValue( strategy=GenerationType.AUTO )
 	private int id_venta;
 	private Date fecha;
+	private int id_cliente;
 	
 	public venta(){
 		
 	}
 	
-	public venta(int id_venta, Date fecha) {
+	public venta(int id_venta, Date fecha,int id_cliente) {
 		this.id_venta = id_venta;
 		this.fecha = fecha;
+		this.id_cliente = id_cliente;
 	}
 	
+	public int getId_cliente() {
+		return id_cliente;
+	}
+
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
+	}
+
 	public int getId_venta() {
 		return id_venta;
 	}

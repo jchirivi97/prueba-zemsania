@@ -25,7 +25,8 @@ public class productoServiceImp implements productoService {
 
 	@Override
 	public void saveProducto(producto product) throws Exception {
-		if(product.equals(getProducto(product.getIdProducto()))){
+        java.util.Optional<producto> producto = productRepository.findById(product.getIdProducto());
+		if(producto.isPresent()){
 			throw new Exception("Este producto ya existe");
 		}else{
 			productRepository.save(product);
@@ -50,12 +51,12 @@ public class productoServiceImp implements productoService {
 		
 		try {
             java.util.Optional<producto> producto = productRepository.findById(idProducto);
-            if (producto.isPresent()) {
-                return producto.get();
-            } else {
-                return null;
+            if(producto.isPresent()){
+            	return producto.get();
             }
-
+            else{
+            	return null;
+            }
         } catch (java.util.NoSuchElementException ex) {
             throw new Exception("Este producto no existe");
         }

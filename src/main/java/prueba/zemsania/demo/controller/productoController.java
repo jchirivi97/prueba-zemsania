@@ -43,7 +43,7 @@ public class productoController {
 	@RequestMapping(method=RequestMethod.POST,path="/saveProduct")
 	public ResponseEntity<?> saveProducto(@RequestBody producto product){
 		try{
-			System.out.println("guarda");
+			System.out.println(product.getIdProducto() + " " + product.getNombre());
 			productService.saveProducto(product);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		}catch(Exception e){
