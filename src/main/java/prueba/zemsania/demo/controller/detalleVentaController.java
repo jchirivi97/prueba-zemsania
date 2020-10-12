@@ -1,5 +1,7 @@
 package prueba.zemsania.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ public class detalleVentaController {
 	detalleVentaService detalleVentaServ;
 	
 	@RequestMapping(method=RequestMethod.GET,path="/{idventa}")
-	public ResponseEntity<detalleVenta> getDetalleVenta(@PathVariable("idventa") int idventa){
+	public ResponseEntity<List<detalleVenta>> getDetalleVenta(@PathVariable("idventa") int idventa){
 		try{
 			return ResponseEntity.ok(detalleVentaServ.getDetalle(idventa));
 		}catch(Exception e){

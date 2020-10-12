@@ -11,3 +11,6 @@ Fecha: Sun Oct 11 20:45:35 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Mon Oct 12 00:01:34 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Mon Oct 12 10:17:01 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Mon Oct 12 13:55:59 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Mon Oct 12 17:18:31 CDT 2020 Usuario: 9999 info : datos incorrectos en el logueo
+Fecha: Mon Oct 12 17:18:56 CDT 2020 Usuario: 1111 debug : Logueo Exitoso
+Fecha: Mon Oct 12 17:19:38 CDT 2020 Usuario: 1111 debug : Logueo Exitoso

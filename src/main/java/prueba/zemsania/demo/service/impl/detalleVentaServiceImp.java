@@ -1,5 +1,7 @@
 package prueba.zemsania.demo.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +22,7 @@ public class detalleVentaServiceImp implements detalleVentaService {
 	}
 
 	@Override
-	public detalleVenta getDetalle(int idventa) {
+	public List<detalleVenta> getDetalle(int idventa) {
 		return detalleVentaRep.getDetalle(idventa);
 	}
 
