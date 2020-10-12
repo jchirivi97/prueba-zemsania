@@ -9,3 +9,4 @@ Fecha: Sun Oct 11 20:43:04 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Sun Oct 11 20:44:11 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Sun Oct 11 20:45:35 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Mon Oct 12 00:01:34 CDT 2020 Usuario: 1 debug : Logueo Exitoso
+Fecha: Mon Oct 12 10:17:01 CDT 2020 Usuario: 1 debug : Logueo Exitoso

@@ -10,10 +10,10 @@ public interface productoService {
 	
 	void saveProducto(producto product) throws Exception;
 	
-	void deleteProducto(int idProducto);
+	void deleteProducto(int idProducto) throws Exception;
 	
-	producto getProducto(int idProducto);
+	producto getProducto(int idProducto) throws Exception;
 	
-	void updateProducto(producto product);
+	void updateProducto(producto product) throws Exception;
 	
 }

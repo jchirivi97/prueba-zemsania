@@ -1,7 +1,10 @@
 package prueba.zemsania.demo.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -9,7 +12,7 @@ import javax.persistence.Table;
 public class cliente {
 
 	@Id
-	private int idCliente;
+	private int id_cliente;
 	
 	private String nombre;
 	private String apellido;
@@ -18,13 +21,16 @@ public class cliente {
 	private String email;
 	private String password;
 	
+	@OneToMany(targetEntity=venta.class)
+	private List ventaList;
+	
 	public cliente(){
 		
 	}
 	
 	public cliente(int idCliente, String nombre, String apellido, String dni,
 			String telefono, String email, String password) {
-		this.idCliente = idCliente;
+		this.id_cliente = idCliente;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
@@ -34,11 +40,19 @@ public class cliente {
 	}
 	
 	public int getIdCliente() {
-		return idCliente;
+		return id_cliente;
 	}
 	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+		this.id_cliente = idCliente;
 	}
+	public List getVentaList() {
+		return ventaList;
+	}
+
+	public void setVentaList(List ventaList) {
+		this.ventaList = ventaList;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

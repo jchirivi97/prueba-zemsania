@@ -7,7 +7,7 @@
 </head>
 <body>
 <thead>
-	<ul class="nav justify-content-center">
+	<ul class="nav justify-content-center border">
 	  <li class="nav-item">
 	    <a class="nav-link active" href="/inicio.html">Inicio</a>
 	  </li>
@@ -23,6 +23,11 @@
 	</ul>
 </thead>
 <main class="row justify-content-center">
+	<nav class="nav flex-column border">
+	  <a class="nav-link active" href="javascript:verCrear()">Registar Produto</a>
+	  <a class="nav-link" href="javascript:verActualizar()">Actualizar Producto</a>
+	  <a class="nav-link" href="javascript:verEliminar()">Eliminar Producto</a>
+	</nav>
 		<div class="col-8 m-4" id="crear">
 			<p class="text-center">Registrar Producto</p>
 			<form id="formCrear">
@@ -41,7 +46,7 @@
 			  <button type="button" onclick="newProduct()" class="btn btn-primary">Crear</button>
 			</form>
 		</div>
-		<div class="col-12" id="actualizar" style="display:none;">
+		<div class="col-8 m-4" id="actualizar" style="display:none;">
 			<div class="col-6">
 				<form>
 					<p class="text-center">Ingrese el codigo del producto a actualizar</p>
@@ -49,28 +54,28 @@
 				  	<label for="idActBusc">Codigo del producto</label>
 				    <input type="number" class="form-control" id="idActBusc">
 				  </div>
-				  <button type="button"  class="btn btn-primary">Buscar</button>
+				  <button type="button" onclick="consultProducto()" class="btn btn-primary">Buscar</button>
 				</form>
 			</div>
 			
 			<form id="formActualizar">
 			  <div class="form-group">
-			    <label for="codigo">Codigo del Producto</label>
+			    <label for="codigoA">Codigo del Producto</label>
 			    <input type="number" class="form-control" id="codigoA" readonly>
 			  </div>
 			  <div class="form-group">
-			    <label for="nombre">Password</label>
+			    <label for="nombreA">Password</label>
 			    <input type="text" class="form-control" id="nombreA">
 			  </div>
 			  <div class="form-group">
-			  	<label for="precio">Valor del Producto: </label>
+			  	<label for="precioA">Valor del Producto: </label>
 			    <input type="number" class="form-control" id="precioA">
 			  </div>
-			  <button type="button" class="btn btn-primary">Actualizar</button>
+			  <button type="button" onclick="updateProducto()" class="btn btn-primary">Actualizar</button>
 			</form>	
 		</div>
 		
-		<div id=eliminar class="col-12" style="display:none;">
+		<div id="eliminar" class="col-8 m-4" style="display:none;">
 			<div class="col-6">
 				<form>
 					<p class="text-center">Ingrese el codigo del producto a eliminar</p>
@@ -78,11 +83,10 @@
 				  	<label for="idProdDel">Codigo del producto</label>
 				    <input type="number" class="form-control" id="idProdDel">
 				  </div>
-				  <button type="button" class="btn btn-primary">Buscar</button>
+				  <button type="button" onclick="deleteProducto()" class="btn btn-primary">Buscar</button>
 				</form>
 			</div>
 		</div>
-		
 			
 </main>
 

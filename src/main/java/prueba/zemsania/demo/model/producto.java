@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class producto {
 	
 	@Id
-	private int idProducto;
+	private int id_producto;
 	private String nombre;
 	private long precio;
 	
@@ -19,16 +19,16 @@ public class producto {
 	}
 	
 	public producto(int idProducto, String nombre, Long precio) {
-		this.idProducto = idProducto;
+		this.id_producto = idProducto;
 		this.nombre = nombre;
 		this.precio = precio;
 	}
 	
 	public int getIdProducto() {
-		return idProducto;
+		return id_producto;
 	}
 	public void setIdProducto(int idProducto) {
-		this.idProducto = idProducto;
+		this.id_producto = idProducto;
 	}
 	public String getNombre() {
 		return nombre;

@@ -41,21 +41,33 @@ public class productoController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,path="/saveProduct")
-	public void saveProducto(@RequestBody producto product){
+	public ResponseEntity<?> saveProducto(@RequestBody producto product){
 		try{
 			System.out.println("guarda");
 			productService.saveProducto(product);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		}catch(Exception e){
-			ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT,path="/updateProduct")
-	public void updateProducto(@RequestBody producto product){
+	public ResponseEntity<?> updateProducto(@RequestBody producto product){
 		try{
 			productService.updateProducto(product);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
 		}catch(Exception e){
-			ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+	
+	@RequestMapping(method={RequestMethod.DELETE,RequestMethod.GET},path="delete/{id}")
+	public ResponseEntity<?> deleteProducto(@PathVariable("id") int idProducto){
+		try{
+			productService.deleteProducto(idProducto);
+			return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+		}catch(Exception e){
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}
 	

@@ -45,6 +45,7 @@ public class DemoApplication {
 				.antMatchers("/product/allProductos").permitAll()
 				.antMatchers("/product/saveProduct").permitAll()
 				.antMatchers("/product/updateProduct").permitAll()
+				.antMatchers("/product/delete/{id}").permitAll()
 				.anyRequest().authenticated();
 		}
 	}

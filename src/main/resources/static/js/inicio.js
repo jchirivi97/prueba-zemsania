@@ -17,7 +17,7 @@ function getProductos(){
 				$("#productos").empty();
 				for(i in resp){
 					$("#productos").append(
-						'<div class="card col m-1" style="width: 15rem;">'+
+						'<div class="card col m-1 text-center" style="width: 15rem;">'+
 							'<div class="card-body">'+
 							'<h5 class="card-title">' + resp[i].nombre +'</h5>'+
 							'<p class="card-text">Codigo:' + resp[i].idProducto +'</p>'+
@@ -76,6 +76,76 @@ function newProduct(){
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) { 
             alert("Producto ya existe"); 
+        }
+	})
+}
+
+function verCrear(){
+	$("#crear").show();
+	$("#actualizar").hide();
+	$("#eliminar").hide();
+}
+
+function verActualizar(){
+	$("#crear").hide();
+	$("#actualizar").show();
+	$("#eliminar").hide();
+}
+
+function verEliminar(){
+	$("#crear").hide();
+	$("#actualizar").hide();
+	$("#eliminar").show();
+}
+
+function updateProducto(){
+	var producto={
+			idProducto : $("#codigoA").val(),
+			nombre : $("#nombreA").val(),
+			precio : $("#precioA").val()
+	}
+	$.ajax({
+		url: "/product/updateProduct",
+		type: "PUT",
+		data: JSON.stringify(producto),
+		contentType: "application/json",
+		success: function(){
+			alert("Producto Actualizado")
+			$("#codigoA").val("")
+			$("#nombreA").val("")
+			$("#precioA").val("")
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Producto no existe"); 
+        }
+	})
+}
+
+function consultProducto(){
+	$.ajax({
+		url : "/product/" + $("#idActBusc").val(),
+		type: "GET",
+		success: function(resp){
+			$("#codigoA").val(resp.idProducto)
+			$("#nombreA").val(resp.nombre)
+			$("#precioA").val(resp.precio)
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Producto no existe"); 
+        }
+	})
+}
+
+function deleteProducto(){
+	$.ajax({
+		url: "/product/delete/"+$("#idProdDel").val(),
+		type: "DELETE",
+		success: function(){
+			alert("Producto Eliminado")
+			$("#idProdDel").val("")
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Producto no existe"); 
         }
 	})
 }
