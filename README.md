@@ -37,7 +37,7 @@ clave : 1234
 
 ## Despliegue
 
-Heroku: https://prueba-droguista.herokuapp.com/
+Heroku: https://prueba-zemsania.herokuapp.com/
 
 ## Vistas
 
