@@ -14,3 +14,10 @@ Fecha: Mon Oct 12 13:55:59 CDT 2020 Usuario: 1 debug : Logueo Exitoso
 Fecha: Mon Oct 12 17:18:31 CDT 2020 Usuario: 9999 info : datos incorrectos en el logueo
 Fecha: Mon Oct 12 17:18:56 CDT 2020 Usuario: 1111 debug : Logueo Exitoso
 Fecha: Mon Oct 12 17:19:38 CDT 2020 Usuario: 1111 debug : Logueo Exitoso
+Fecha: Mon Oct 12 18:57:12 CDT 2020 Usuario: 123456789 info : datos incorrectos en el logueo
+Fecha: Mon Oct 12 18:57:35 CDT 2020 Usuario: 123456789 info : datos incorrectos en el logueo
+Fecha: Mon Oct 12 18:57:57 CDT 2020 Usuario: 1234567879 debug : Logueo Exitoso
+Fecha: Mon Oct 12 19:05:55 CDT 2020 Usuario: 123456789 info : datos incorrectos en el logueo
+Fecha: Mon Oct 12 19:06:13 CDT 2020 Usuario: 123456789 info : datos incorrectos en el logueo
+Fecha: Mon Oct 12 19:07:26 CDT 2020 Usuario: 987654321 debug : Logueo Exitoso
+Fecha: Mon Oct 12 19:12:00 CDT 2020 Usuario: 987654321 debug : Logueo Exitoso
