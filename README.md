@@ -30,14 +30,6 @@ Leyenda:
 - HTML
 - Boostrap
 
-## Usuarios de Prueba
-
-usuario : 1234567879
-clave : 1234
-
-## Despliegue
-
-Heroku: http://prueba-zemsania.herokuapp.com/
 
 ## Vistas
 
